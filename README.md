@@ -187,6 +187,47 @@ int dy[4] = {0, 0, 1, -1};
 - 時間複雜度：立方體中共有N³個座標點,方向數量為固定常數,因此整體時間複雜度可視為 O(N³)
 - 空間複雜度：主要儲存立方體的三維陣列,所需空間與輸入大小成正比，為 O(N³)
 
+#### 程式實作（C++）
+
+```cpp
+// 方向向量：軸向、平面對角線、立體對角線
+int dir[13][3] = {
+    {1, 0, 0}, {0, 1, 0}, {0, 0, 1},
+    {1, 1, 0}, {1, -1, 0}, {1, 0, 1}, {1, 0, -1},
+    {0, 1, 1}, {0, 1, -1},
+    {1, 1, 1}, {1, 1, -1}, {1, -1, 1}, {1, -1, -1}
+};
+
+// 枚舉每個起始點，沿固定方向檢查是否形成完整直線
+for (int z = 0; z < n; z++)
+    for (int y = 0; y < n; y++)
+        for (int x = 0; x < n; x++) {
+            if (cube[z][y][x] != 1) continue;
+
+            for (int d = 0; d < 13; d++) {
+                int tz = z + (n - 1) * dir[d][0];
+                int ty = y + (n - 1) * dir[d][1];
+                int tx = x + (n - 1) * dir[d][2];
+
+                // 若終點不在範圍內，直接略過
+                if (!inRange(tz, ty, tx, n)) continue;
+
+                bool ok = true;
+                for (int s = 0; s < n; s++) {
+                    int cz = z + s * dir[d][0];
+                    int cy = y + s * dir[d][1];
+                    int cx = x + s * dir[d][2];
+                    if (cube[cz][cy][cx] == 0) {
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok) ans++;
+            }
+        }
+```
+// （完整程式碼請見 cube3d.cpp）
+
 ### 5. RGB Image Processing（RGB 檔案）
 
 在撰寫此題時,我一開始將RGB三個顏色通道分別以三個二維陣列儲存,
