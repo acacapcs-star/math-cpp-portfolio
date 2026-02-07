@@ -37,10 +37,10 @@
   =>整體為O(N²)
   
 ###程式實作(C++)
-
+```cpp**
 #include<bits/stdc++.h>
 using namespace std;
-
+int main(){
 int posR[15][65537]; 
 int posC[15][65537];
 
@@ -48,8 +48,8 @@ int main(){
     int n, m;
     cin >> n >> m;
     ...
-}---
-
+}
+```**
 ### 2. Flood（淹水啦）
 
 在一開始構思這題時，我的直覺作法是：
