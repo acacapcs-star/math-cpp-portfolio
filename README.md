@@ -35,8 +35,20 @@
   "預處理"這個priority成功地“大幅降低”了重複掃描的次數
 - 空間複雜度：使用 N * N 的二維陣列與額外的座標對照結構
   =>整體為O(N²)
+  
+###程式實作(C++)
 
----
+#include<bits/stdc++.h>
+using namespace std;
+
+int posR[15][65537]; 
+int posC[15][65537];
+
+int main(){
+    int n, m;
+    cin >> n >> m;
+    ...
+}---
 
 ### 2. Flood（淹水啦）
 
