@@ -37,7 +37,6 @@
   =>整體為O(N²)
   
 #### 程式實作（C++）
-
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -53,6 +52,7 @@ int main(){
     // （完整程式碼請見 bingo.cpp）
     return 0;
 }
+```
 
 ### 2. Flood（淹水啦）
 
