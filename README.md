@@ -84,6 +84,34 @@ int main(){
 - 時間複雜度：需要依高度層逐步進行檢查,整體仍屬於多次"遍歷地形"的相應模擬過程
 - 空間複雜度：主要使用地形高度的二維結構與輔助標記陣列,因此可視為O(N²)
 
+#### 程式實作（C++）
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int dx[4] = {1, -1, 0, 0};
+int dy[4] = {0, 0, 1, -1};
+
+        // 若能走到邊界，表示水可流出
+        if(x == 0 || y == 0 || x == n-1 || y == m-1){
+            return true;
+        }
+
+        for(int d = 0; d < 4; d++){
+            int nx = x + dx[d];
+            int ny = y + dy[d];
+            if(nx < 0 || ny < 0 || nx >= n || ny >= m) continue;
+            if(visited[nx][ny]) continue;
+            if(height[nx][ny] <= h){
+                visited[nx][ny] = true;
+                q.push({nx, ny});
+            }
+        }
+    }
+    return false; // 無法流向邊界，可形成淹水
+}
+```
 ---
 
 ### 3. Dark Particle（暗粒子）
