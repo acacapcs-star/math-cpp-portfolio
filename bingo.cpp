@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std; 
 int posR[15][65537]; 
 int posC[15][65537];
 int main(){
