@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std; 
 int posR[15][65537]; 
 int posC[15][65537];

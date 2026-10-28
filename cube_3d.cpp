@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 int a[15][15][15];
 bool inRange(int x, int y, int z, int n) {
