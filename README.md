@@ -1,4 +1,4 @@
-# math-cpp-portfolio
+# math-cpp-portfolio 註:由於此偏向競賽類題目,因此用萬用標頭
 
 ## 專案簡介
 在解 ONLINE NTU CPC 的程式碼時，我赫然發覺其中的邏輯思維，
